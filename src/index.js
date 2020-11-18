@@ -1,4 +1,5 @@
 const hello = require('./hello')
 const world = require('./world')
-
+require('./index.css')
+require('./index.less')
 console.log(hello,world)
