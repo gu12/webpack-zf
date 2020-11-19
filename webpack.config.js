@@ -1,6 +1,8 @@
 let path = require('path')
 let HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 console.log(path.resolve())///Users/zcxiao/Desktop/my_code/webpack-zf 绝对路径
 
@@ -19,7 +21,22 @@ module.exports = {
         filename: 'bundle.[hash:8].js',
         path: path.resolve(__dirname, 'build')
     },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true 
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ]
+    },
     plugins: [
+        new OptimizeCSSAssetsPlugin({}),
+
+        new MiniCssExtractPlugin({
+            filename: 'main.css'
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
@@ -29,9 +46,7 @@ module.exports = {
             // },
             // hash:true
         }),
-        new MiniCssExtractPlugin({
-            filename: 'main.css'
-        })
+       
     ],
     module: {
         rules: [
@@ -43,9 +58,11 @@ module.exports = {
 
                     {
                         loader: MiniCssExtractPlugin.loader,
-
                     },
                     { loader: 'css-loader' },
+                    'postcss-loader',
+
+                   
 
                 ]
             },

@@ -101,11 +101,10 @@ eval("module.exports = 'hello'\n\n//# sourceURL=webpack:///./src/hello.js?");
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './style.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nconst hello = __webpack_require__(/*! ./hello */ \"./src/hello.js\")\nconst world = __webpack_require__(/*! ./world */ \"./src/world.js\")\n// require('./index.css')\n// require('./index.less')\n\n\nconsole.log(hello,world)\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const hello = __webpack_require__(/*! ./hello */ \"./src/hello.js\")\nconst world = __webpack_require__(/*! ./world */ \"./src/world.js\")\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './index.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))\n// require('./index.less')\n//  import './index.css';\n\nconsole.log(hello,world)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
