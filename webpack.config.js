@@ -3,10 +3,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-
 console.log(path.resolve())///Users/zcxiao/Desktop/my_code/webpack-zf 绝对路径
-
-
 module.exports = {
     devServer: {
         port: 3000,
@@ -26,14 +23,13 @@ module.exports = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: true 
+                sourceMap: true
             }),
             new OptimizeCSSAssetsPlugin({})
         ]
     },
     plugins: [
         new OptimizeCSSAssetsPlugin({}),
-
         new MiniCssExtractPlugin({
             filename: 'main.css'
         }),
@@ -46,24 +42,51 @@ module.exports = {
             // },
             // hash:true
         }),
-       
     ],
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'eslint-loader',
+                        options:{
+                            enforce:'pre'  //最前pre   post 后
+                        }
+                    },
+                   
+                ],
+                exclude:/node_modules/
+            },
+            {
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options:{
+                            presets:[
+                                '@babel/preset-env'
+                            ],
+                            plugins:[
+                                '@babel/plugin-proposal-class-properties',
+                                '@babel/plugin-transform-runtime'
+                            ]
+                        }
+                    },
+                   
+                ],
+                exclude:/node_modules/
+            },
             //style-loader css插入head标签中
             //css-loader css解析
             {
                 test: /\.css$/,
                 use: [
-
                     {
                         loader: MiniCssExtractPlugin.loader,
                     },
                     { loader: 'css-loader' },
                     'postcss-loader',
-
-                   
-
                 ]
             },
             {
@@ -71,16 +94,11 @@ module.exports = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-
                     },
-                   
                     'css-loader',
                     'less-loader',
-
                 ]
             }
-
         ]
     }
-
 }

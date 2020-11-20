@@ -90,10 +90,11 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// const hello = require('./hello')\n// const world = require('./world')\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './index.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))\n// require('./index.less')\n//  import './index.css';\n\n// console.log(hello,world)\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './index.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n// const hello = require('./hello')\n// const world = require('./world')\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './index.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())); // require('./index.less')\n\n\n // console.log(hello,world)\n\nvar fn = function fn() {\n  console.log('log');\n};\n\nfn();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

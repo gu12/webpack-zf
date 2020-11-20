@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/hello.js":
-/*!**********************!*\
-  !*** ./src/hello.js ***!
-  \**********************/
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = 'hello'\n\n//# sourceURL=webpack:///./src/hello.js?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/index.css?");
 
 /***/ }),
 
@@ -101,21 +101,11 @@ eval("module.exports = 'hello'\n\n//# sourceURL=webpack:///./src/hello.js?");
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const hello = __webpack_require__(/*! ./hello */ \"./src/hello.js\")\nconst world = __webpack_require__(/*! ./world */ \"./src/world.js\")\n__webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module './index.css'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))\n// require('./index.less')\n//  import './index.css';\n\nconsole.log(hello,world)\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/world.js":
-/*!**********************!*\
-  !*** ./src/world.js ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = 'world'\n\n//# sourceURL=webpack:///./src/world.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n// const hello = require('./hello')\n// const world = require('./world')\n__webpack_require__(/*! ./index.css */ \"./src/index.css\"); // require('./index.less')\n\n\n // console.log(hello,world)\n\nvar fn = function fn() {\n  console.log('log');\n};\n\nfn();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
