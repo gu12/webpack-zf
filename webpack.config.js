@@ -3,6 +3,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const webpack = require("webpack");
 console.log(path.resolve())///Users/zcxiao/Desktop/my_code/webpack-zf 绝对路径
 module.exports = {
     devServer: {
@@ -42,9 +43,22 @@ module.exports = {
             // },
             // hash:true
         }),
+        new webpack.ProvidePlugin({   //为每个模块注入jquery
+            // $:'jquery'
+        })
     ],
+    externals:{
+        jquery:'jquery'  //这样就不会打包 import xxx from 'xxx' 比如用了cdn
+    },
     module: {
         rules: [
+            {
+                test: require.resolve('jquery'),
+                loader: 'expose-loader', //暴露到window  js文件里要引入jquery
+                options: {
+                  exposes: ['$', 'jQuery'],
+                },
+              },
             {
                 test: /\.js$/,
                 use: [

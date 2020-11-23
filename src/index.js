@@ -1,16 +1,20 @@
 // const hello = require('./hello')
 // const world = require('./world')
-require('./index.css')
-// require('./index.less')
-  import './index.css';
+ import $ from 'jquery'
+console.log('window.$',window.$)
+console.log('$',$)
 
-// console.log(hello,world)
+// require('./index.css')
+// // require('./index.less')
+//   import './index.css';
 
-let fn = ()=>{
-    console.log('log')
-}
-fn()
+// // console.log(hello,world)
 
-class A{
-    a = 1
-}
+// let fn = ()=>{
+//     console.log('log')
+// }
+// fn()
+
+// class A{
+//     a = 1
+// }
