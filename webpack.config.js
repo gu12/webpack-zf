@@ -13,10 +13,14 @@ module.exports = {
         contentBase: './build',
         progress: true
     },
+    devtool:'source-map',//增加映射 
+    //帮助调试源代码 eval-souce-map 不会单独打包出映射文件
+    //cheap-module-source-map 产生单独的文件
+    //cheap-module-eval-source-map 不会单独打包出映射文件打包到一起 显示行不显示列
     mode: 'development',
     entry: {
         home: './src/index.js',
-        other: './src/other.js',
+        // other: './src/other.js',
     },
     output: {
         filename: '[name].js',
@@ -34,7 +38,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new OptimizeCSSAssetsPlugin({}),
         new MiniCssExtractPlugin({
             filename: 'css/main.css',
@@ -47,13 +51,13 @@ module.exports = {
             //     collapseWhitespace:true,//折叠1行
             // },
             // hash:true
-            chunks:['home']
+            // chunks:['home']
         }),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'other.html',
-            chunks:['other']
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: './src/index.html',
+        //     filename: 'other.html',
+        //     chunks:['other']
+        // }),
         new webpack.ProvidePlugin({   //为每个模块注入jquery
             $: 'jquery'
         })

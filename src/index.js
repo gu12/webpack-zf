@@ -9,6 +9,12 @@ let image = new Image()
 image.src = photo
 // document.body.appendChild(image)
 
+class Log{
+     constructor(){
+         console.lo('error')
+     }
+}
+let log = new Log()
 
 require('./index.css')
 // // require('./index.less')

@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/classCallCheck.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/classCallCheck.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nmodule.exports = _classCallCheck;\n\n//# sourceURL=webpack:///./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/classCallCheck.js?");
+
+/***/ }),
+
 /***/ "./node_modules/_expose-loader@1.0.1@expose-loader/dist/runtime/getGlobalThis.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/_expose-loader@1.0.1@expose-loader/dist/runtime/getGlobalThis.js ***!
@@ -150,7 +161,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _mm_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mm.png */ \"./src/mm.png\");\n/* harmony import */ var _mm_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_mm_png__WEBPACK_IMPORTED_MODULE_0__);\n// const hello = require('./hello')\n// const world = require('./world')\n//  import $ from 'jquery'\nconsole.log('window.$', window.$);\nconsole.log('$', $);\n\nvar image = new Image();\nimage.src = _mm_png__WEBPACK_IMPORTED_MODULE_0___default.a; // document.body.appendChild(image)\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\"); // // require('./index.less')\n//   import './index.css';\n// // console.log(hello,world)\n// let fn = ()=>{\n//     console.log('log')\n// }\n// fn()\n// class A{\n//     a = 1\n// }\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.5.1@jquery/dist/jquery-exposed.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _mm_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mm.png */ \"./src/mm.png\");\n/* harmony import */ var _mm_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mm_png__WEBPACK_IMPORTED_MODULE_1__);\n\n// const hello = require('./hello')\n// const world = require('./world')\n//  import $ from 'jquery'\nconsole.log('window.$', window.$);\nconsole.log('$', $);\n\nvar image = new Image();\nimage.src = _mm_png__WEBPACK_IMPORTED_MODULE_1___default.a; // document.body.appendChild(image)\n\nvar Log = function Log() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Log);\n\n  console.lo('error');\n};\n\nvar log = new Log();\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\"); // // require('./index.less')\n//   import './index.css';\n// // console.log(hello,world)\n// let fn = ()=>{\n//     console.log('log')\n// }\n// fn()\n// class A{\n//     a = 1\n// }\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.5.1@jquery/dist/jquery-exposed.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
