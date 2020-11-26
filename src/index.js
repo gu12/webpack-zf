@@ -1,10 +1,16 @@
 // const hello = require('./hello')
 // const world = require('./world')
- import $ from 'jquery'
+//  import $ from 'jquery'
 console.log('window.$',window.$)
 console.log('$',$)
+import photo from './mm.png'
+let image = new Image()
 
-// require('./index.css')
+image.src = photo
+// document.body.appendChild(image)
+
+
+require('./index.css')
 // // require('./index.less')
 //   import './index.css';
 
