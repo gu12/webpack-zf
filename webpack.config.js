@@ -3,15 +3,39 @@ let HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const webpack = require("webpack");
 console.log(path.resolve())///Users/zcxiao/Desktop/my_code/webpack-zf 绝对路径
 module.exports = {
     devServer: {
-        port: 3000,
+        before(app){
+            //mock数据
+            app.get('/list',(req,res)=>{
+                res.json({
+                    name:'list',
+                    age:18
+                })
+            })
+
+        },
+        port: 8080,
+        proxy:{
+            '/api':'http://localhost:3000',
+            pathRewrite:{
+                '/api':''
+            }
+        },
         contentBase: './build',
         progress: true
+    },
+    watch:true,
+    watchOptions:{
+            poll:1000,
+            aggregateTimeout:500,
+            ignored:'/node_modules'
+
     },
     devtool:'source-map',//增加映射 
     //帮助调试源代码 eval-souce-map 不会单独打包出映射文件
@@ -25,7 +49,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
-        publicPath:'www.baidu.com'   //统一的资源路径
+        //publicPath:'www.baidu.com'   //统一的资源路径
     },
     optimization: {
         minimizer: [
@@ -38,7 +62,7 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CleanWebpackPlugin(),
+       
         new OptimizeCSSAssetsPlugin({}),
         new MiniCssExtractPlugin({
             filename: 'css/main.css',
@@ -60,7 +84,14 @@ module.exports = {
         // }),
         new webpack.ProvidePlugin({   //为每个模块注入jquery
             $: 'jquery'
-        })
+        }),
+        new CleanWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+              { from: "./src/doc", to: "./doc" },//第二个选项是复制后的文件夹名
+            ],
+          }),
+          new webpack.BannerPlugin('write by zcxiao')
     ],
     externals: {
         // jquery:'jquery'  //这样就不会打包 import xxx from 'xxx' 比如用了cdn
@@ -95,7 +126,7 @@ module.exports = {
                             limit: 200 * 100,
                             outputPath:'img/',
                             esModule:false,
-                            publicPath:'www.bilibi.com'
+                            //publicPath:'www.bilibi.com'
                         }
                     },
 
